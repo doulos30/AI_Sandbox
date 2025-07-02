@@ -1,0 +1,22 @@
+calibration:
+  type: full
+  iterations: 500
+  input_data:
+    input: 
+      path:Input name: /local/shared_with_docker/calib_data.npy
+      type: npy
+
+network:
+  input_shapes:
+    input: [1, 1]  # Adjust if your model expects [1, 1] or another shape
+
+parser:
+  nodes:
+    input:
+      name: input  # Replace with your actual input node name
+    output:
+      name: output  # Replace with your actual output node name
+
+compiler:
+  target: hailo8l
+  output_dir: /local/shared_with_docker/build/

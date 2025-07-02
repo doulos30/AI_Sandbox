@@ -63,7 +63,10 @@ def main():
     # Verify the actual anomaly rate
     total, anomalies, percentage = count_anomalies(filename)
     print(f"Dataset generated: {total} samples with {anomalies} anomalies ({percentage:.2f}%)")
-    print("-" * 50)
+    print("-" * 50) 
+
+
+    
 
 if __name__ == "__main__":
     main()
