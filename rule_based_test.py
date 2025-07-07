@@ -77,11 +77,12 @@ def test_voltage(voltage, v_min=90.0, v_max=125.0):
                     print("FINAL DECISION: ✓ Normal voltage")
 
 # Test normal values
-test_voltage(90.0)   # Minimum normal
+
 test_voltage(110.0)  # Mid-range normal
 test_voltage(125.0)  # Maximum normal
 
 # Test anomalies
+test_voltage(90.0)   # Minimum normal
 test_voltage(0.0)    # Zero voltage (anomaly)
 test_voltage(85.0)   # Below minimum (anomaly)
 test_voltage(130.0)  # Above maximum (anomaly)
