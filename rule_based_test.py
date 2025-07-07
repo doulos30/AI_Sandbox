@@ -3,7 +3,7 @@ Voltage Anomaly Detection using Hailo Platform and Rule-based Logic
 This script provides a simple voltage anomaly detection system that combines a rule-based approach with inference from a Hailo neural network model. It includes:
 - `is_voltage_anomaly(voltage, v_min=110.0, v_max=125.0)`: 
     Determines if a given voltage value is considered anomalous based on predefined minimum and maximum thresholds.
-- `test_voltage(voltage, v_min=90.0, v_max=125.0)`:
+- `test_voltage(voltage, v_min=110.0, v_max=125.0)`:
     Tests a given voltage value by:
         - Normalizing the input voltage.
         - Running inference using a Hailo neural network model loaded from "voltage_model.hef".
