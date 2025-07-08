@@ -12,13 +12,10 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, TensorDataset
 
-
 # 1. Load and preprocess data
 #df = pd.read_csv('voltage_data_anomalies.csv') 
 
-df = pd.read_csv('voltage_datasets/voltage_data_1pct_anomalies.csv')
-
-
+df = pd.read_csv('voltage_datasets/voltage_data_15pct_anomalies.csv')
 
 # Normalize voltage to 0-1 range for neural network training
 v_min = df['voltage'].min()
@@ -51,11 +48,11 @@ class VoltageNet(nn.Module):
     def __init__(self):
         super().__init__()
         self.fc = nn.Sequential(
-            nn.Linear(1, 8), # increase neurons
+            nn.Linear(1, 16), # increase neurons
             nn.ReLU(),
-            nn.Linear(8, 8), # add hidden layer
+            nn.Linear(16, 16), # add hidden layer
             nn.ReLU(),
-            nn.Linear(8, 1),
+            nn.Linear(16, 1),
             nn.Sigmoid()
         )
     def forward(self, x):

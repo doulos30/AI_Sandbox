@@ -52,7 +52,7 @@ def main():
         os.makedirs(output_dir)
 
     # Generate dataset with 5% anomaly rate
-    anomaly_rate = 0.01   # lowered to 1% for better balance
+    anomaly_rate = 0.05   # lowered to 5% for better balance
     sample_size = 80000  # Full sample size for training
     
     filename = f"{output_dir}/voltage_data_{int(anomaly_rate*100)}pct_anomalies.csv"

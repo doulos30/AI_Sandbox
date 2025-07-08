@@ -13,7 +13,7 @@ The script demonstrates usage by testing several voltage values, both within and
 Dependencies:
     - numpy
     - hailo_platform (as hpf)
-    - A valid Hailo HEF file ("voltage_model.hef") for inference
+    - A valid Hailo HEF file ("voltage_model2.hef") for inference
 Example usage:
     test_voltage(110.0)  # Test a normal voltage value
     test_voltage(130.0)  # Test an anomalous voltage value
@@ -29,7 +29,7 @@ def is_voltage_anomaly(voltage, v_min=115.0, v_max=126.0):
 def test_voltage(voltage, v_min=90.0, v_max=125.0):
     print(f"\n--- Testing Voltage: {voltage}V ---")
     
-    hef = hpf.HEF("voltage_model.hef")
+    hef = hpf.HEF("voltage_model2.hef")
 
     with hpf.VDevice() as target:
         configure_params = hpf.ConfigureParams.create_from_hef(hef, interface=hpf.HailoStreamInterface.PCIe)

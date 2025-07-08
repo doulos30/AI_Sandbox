@@ -3,7 +3,7 @@ calibration:
   iterations: 500
   input_data:
     input: 
-      path: /local/shared_with_docker/calib_data.npy
+      path: /local/shared_with_docker/calib_data_1pct_reshaped.npy
       type: npy
 
 network:
