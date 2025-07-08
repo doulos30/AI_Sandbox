@@ -23,7 +23,7 @@ import numpy as np
 import hailo_platform as hpf 
 
 # Simple rule-based voltage anomaly detector
-def is_voltage_anomaly(voltage, v_min=110.0, v_max=125.0):
+def is_voltage_anomaly(voltage, v_min=115.0, v_max=126.0):
     return voltage < v_min or voltage > v_max
 
 def test_voltage(voltage, v_min=90.0, v_max=125.0):
@@ -77,7 +77,6 @@ def test_voltage(voltage, v_min=90.0, v_max=125.0):
                     print("FINAL DECISION: ✓ Normal voltage")
 
 # Test normal values
-
 test_voltage(110.0)  # Mid-range normal
 test_voltage(125.0)  # Maximum normal
 

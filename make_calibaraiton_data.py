@@ -1,5 +1,20 @@
-import pandas as pd
+"""
+This script generates and saves a calibration dataset for voltage anomaly detection.
+Steps performed:
+1. Loads a CSV file containing voltage readings and anomaly labels.
+2. Determines the minimum and maximum voltage values for normalization.
+3. Samples 475 normal and 25 anomaly voltage values to create a calibration set.
+4. Normalizes the sampled voltages using min-max scaling.
+5. Saves the normalized calibration data as a NumPy array for use in Hailo calibration.
+Outputs:
+- 'calib_data.npy': NumPy file containing the normalized calibration voltages.
+Usage:
+- Ensure the input CSV file ('voltage_datasets/voltage_data_10pct_anomalies.csv') exists and contains 'voltage' and 'anomaly' columns.
+- Run the script to generate and save the calibration data.
+"""
+
 import numpy as np
+import pandas as pd 
 
 # Load your generated dataset
 df = pd.read_csv('voltage_datasets/voltage_data_10pct_anomalies.csv')
