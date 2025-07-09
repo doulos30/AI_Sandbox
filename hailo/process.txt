@@ -1,0 +1,18 @@
+hailo parser onnx /local/shared_with_docker/voltage_model2.onnx \
+  --har-path voltage2.har \
+  --hw-arch hailo8l
+
+# Step 2: Optimize model with calibration data
+hailo optimize voltage.har \
+  --calib-set-path /local/shared_with_docker/calib_data_balanced.npy \
+  --output-har-path voltage2_quantized.har \
+  --hw-arch hailo8l
+
+# Step 3: Compile quantized HAR to HEF
+hailo compiler voltage2_quantized.har \
+  --hw-arch hailo8l \
+  --output-dir /local/shared_with_docker
+
+# Optional: Introspect HEF details
+hailortcli parse-hef /local/shared_with_docker/voltage_model2.hef \
+  --parse-streams --parse-vstreams 
